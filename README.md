@@ -4,7 +4,7 @@
 
 > Make your express application respond correctly when http requests are failing
 
-When your express application is calling failing resources, ensure it will respond with a `502 Bad Gateway` response.
+When your express application is calling failing resources, mount this middleware to ensure it will respond with a `502 Bad Gateway` response when needed.
 
 ### Installation
 
