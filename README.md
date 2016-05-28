@@ -1,4 +1,7 @@
 # anubis
+
+[![Build Status](https://travis-ci.org/m90/anubis.svg?branch=master)](https://travis-ci.org/m90/anubis)
+
 > Make your express application respond correctly when http requests are failing
 
 When your express application is calling failing resources, ensure it will respond with a `502 Bad Gateway` response.
