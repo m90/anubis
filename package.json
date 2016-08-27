@@ -1,6 +1,6 @@
 {
   "name": "anubis",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "make your express application respond correctly when http requests are failing",
   "main": "index.js",
   "scripts": {

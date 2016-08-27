@@ -9,11 +9,12 @@ describe('anubis', function(){
 
 	var scope = nock('http://my-api.foo');
 
-	it('exports a function', function(){
+	it('exports a function that returns a function when passing a function', function(){
 		assert(_.isFunction(anubis));
+		assert(_.isFunction(anubis(Function.prototype)));
 	});
 	it('expects `err, req, res, next` signature', function(){
-		assert.equal(anubis.length, 4);
+		assert.equal(anubis(Function.prototype).length, 4);
 	});
 	it('does not interfere with successful requests', function(done){
 		scope

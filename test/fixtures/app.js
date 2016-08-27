@@ -12,7 +12,9 @@ app.get('/', function(req, res, next){
 		.catch(next);
 });
 
-app.use(anubis);
+app.use(anubis(function(err){
+	return err.statusCode;
+}));
 
 app.use(function(err, req, res, next){ //eslint-disable-line no-unused-vars
 	res.status(err.status);

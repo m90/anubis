@@ -2,9 +2,9 @@
 
 [![Build Status](https://travis-ci.org/m90/anubis.svg?branch=master)](https://travis-ci.org/m90/anubis)
 
-> Make your express application respond correctly when http requests are failing
+> Make sure your express application responds correctly when outgoing http requests are failing
 
-When your express application is calling failing resources, mount this middleware to ensure it will respond with a `502 Bad Gateway` response when needed.
+When your express application is calling failing resources, mount this middleware to ensure it will respond with a proper `502 Bad Gateway` response when needed.
 
 ### Installation
 
@@ -33,7 +33,10 @@ app.get('/', function(req, res, next){
 
 // always make sure to mount anubis **after** all routes that call
 // external resources
-app.use(anubis);
+// pass a function that transforms the Error into a status code
+app.use(anubis(function(err){
+    return err.statusCode;
+}));
 
 app.use(function(err, req, res, next){ //eslint-disable-line no-unused-vars
 	res.status(err.status);
