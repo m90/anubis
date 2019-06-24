@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/m90/anubis#readme",
   "devDependencies": {
-    "eslint": "^2.11.0",
+    "eslint": "^4.18.2",
     "express": "^4.13.4",
     "mocha": "^2.5.3",
     "nock": "^8.0.0",
